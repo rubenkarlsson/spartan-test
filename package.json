@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "npx nx serve spartan-test-1"
+    "start": "npx nx serve spartan-test-1",
+    "build": "nx build spartan-test-1"
   },
   "private": true,
   "dependencies": {

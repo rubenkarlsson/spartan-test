@@ -49,5 +49,6 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     }
-  }
+  },
+  "defaultProject": "spartan-test-1"
 }

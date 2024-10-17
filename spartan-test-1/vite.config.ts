@@ -9,11 +9,9 @@ export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
     cacheDir: `../node_modules/.vite`,
-
     ssr: {
       noExternal: ['@analogjs/trpc', '@trpc/server'],
     },
-
     build: {
       outDir: '../dist/./spartan-test-1/client',
       reportCompressedSize: true,
@@ -27,6 +25,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       analog({
         nitro: {
+          preset: 'vercel',
           routeRules: {
             '/': {
               prerender: false,
@@ -34,7 +33,6 @@ export default defineConfig(({ mode }) => {
           },
         },
       }),
-
       nxViteTsPaths(),
       splitVendorChunkPlugin(),
     ],

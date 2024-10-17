@@ -16,5 +16,6 @@ import { Component } from '@angular/core';
       }
     `,
   ],
+  standalone: true,
 })
 export default class TestPageComponent {}
