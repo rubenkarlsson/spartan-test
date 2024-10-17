@@ -17,4 +17,4 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class TestPageComponent {}
+export default class TestPageComponent {}
