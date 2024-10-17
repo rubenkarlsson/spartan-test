@@ -4,16 +4,27 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { shareReplay, Subject, switchMap, take } from 'rxjs';
 import { waitFor } from '@analogjs/trpc';
 import { injectTrpcClient } from '../../trpc-client';
+import { GoogleSignInComponent } from './google-sign-in.component';
 
 @Component({
   selector: 'spartan-test-1-analog-welcome',
   standalone: true,
-  imports: [AsyncPipe, FormsModule, NgFor, DatePipe, NgIf],
+  imports: [
+    AsyncPipe,
+    FormsModule,
+    NgFor,
+    DatePipe,
+    NgIf,
+    GoogleSignInComponent,
+  ],
   host: {
     class:
       'flex min-h-screen flex-col text-zinc-900 bg-zinc-50 px-4 pt-8 pb-32',
   },
   template: `
+    <nav>
+      <app-google-sign-in></app-google-sign-in>
+    </nav>
     <main class="flex-1 mx-auto">
       <section class="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div class="flex max-w-[64rem] flex-col items-center gap-4 text-center">

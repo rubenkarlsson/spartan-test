@@ -1,15 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>MyApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/src/styles.css" />
-</head>
-<body>
-  <spartan-test-1-root></spartan-test-1-root>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Spartan Test</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script>
+      async function handleSignInWithGoogle(response) {
+        const { data, error } = await supabase.auth.signInWithIdToken({
+          provider: 'google',
+          token: response.credential,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <spartan-test-1-root></spartan-test-1-root>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
